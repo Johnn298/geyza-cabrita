@@ -1,0 +1,604 @@
+/* ============================================================
+   DESIGN PHILOSOPHY: Romantic Botanica — Elegant Beauty
+   - Warm ivory background, dusty rose primary, champagne gold accent
+   - Playfair Display (elegant headlines) + Montserrat (modern body)
+   - Soft shadows, organic shapes, gentle animations
+   - Mobile-first, single-column layout with generous whitespace
+   ============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #402020;
+    background-color: #faf8f5;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Colors ─────────────────────────────────────────────── */
+:root {
+    --primary: #9d6b6b;           /* dusty rose */
+    --accent: #b8956a;             /* champagne gold */
+    --background: #faf8f5;         /* warm ivory */
+    --foreground: #402020;         /* deep brown */
+    --text-light: #8d7070;         /* light brown */
+    --border-light: #e8dcd8;       /* light border */
+    --white: #ffffff;
+}
+
+/* ─── Typography ─────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* ─── Navigation ─────────────────────────────────────────── */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250, 248, 245, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    padding: 0.75rem 1.25rem;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.navbar-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #664d4d;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        gap: 0.75rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* ─── Hero Section ────────────────────────────────────────── */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(250, 248, 245, 0) 0%, rgba(250, 248, 245, 0.6) 60%, rgba(250, 248, 245, 0.95) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 3rem 1.25rem 4rem;
+    max-width: 600px;
+    animation: fadeUp 1s ease-out;
+}
+
+.hero-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--foreground);
+    margin-bottom: 1.5rem;
+}
+
+.hero-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    font-size: 0.97rem;
+    color: #664d4d;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 380px;
+}
+
+/* ─── Buttons ────────────────────────────────────────────── */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 999px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #8d5a5a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(157, 107, 107, 0.3);
+}
+
+/* ─── Container & Layout ─────────────────────────────────── */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+/* ─── Section Header ─────────────────────────────────────── */
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: var(--foreground);
+    margin-bottom: 0.5rem;
+}
+
+/* ─── Services Section ────────────────────────────────────── */
+.services {
+    padding: 4rem 0;
+    background: var(--background);
+}
+
+/* ─── Accordion ──────────────────────────────────────────── */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.accordion-item {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(180, 120, 100, 0.07);
+    border: 1.5px solid var(--border-light);
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.accordion-item.open {
+    box-shadow: 0 4px 24px rgba(180, 120, 100, 0.12);
+    border-color: rgba(184, 149, 106, 0.4);
+}
+
+.accordion-header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+    padding: 0;
+    background: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .accordion-header {
+        grid-template-columns: 1fr;
+    }
+}
+
+.accordion-item.open .accordion-header {
+    background: white;
+}
+
+.accordion-header-image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .accordion-header-image {
+        height: 120px;
+    }
+}
+
+.accordion-header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.accordion-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .accordion-header-content {
+        padding: 1.5rem 1rem;
+    }
+}
+
+.accordion-label {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--foreground);
+    letter-spacing: 0.02em;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .accordion-label {
+        font-size: 1.2rem;
+    }
+}
+
+.accordion-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.accordion-item.open .accordion-toggle {
+    background: #8d5a5a;
+    transform: rotate(45deg);
+}
+
+.accordion-toggle svg {
+    width: 16px;
+    height: 16px;
+    stroke: white;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-item.open .accordion-content {
+    max-height: 1500px;
+}
+
+.accordion-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.accordion-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.accordion-services {
+    padding: 0 1.25rem 1rem;
+}
+
+.service-item {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.service-item:last-child {
+    border-bottom: none;
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.2rem;
+}
+
+.service-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--foreground);
+    line-height: 1.3;
+}
+
+.service-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--accent);
+    white-space: nowrap;
+    background: #f7f5f2;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border-light);
+    flex-shrink: 0;
+}
+
+.service-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.services-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ─── About Section ──────────────────────────────────────── */
+.about {
+    padding: 4rem 0;
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-image {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(157, 107, 107, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 50px rgba(157, 107, 107, 0.3);
+}
+
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-text .section-label {
+    margin-bottom: 0.4rem;
+}
+
+.about-text .section-title {
+    margin-bottom: 1.5rem;
+}
+
+.about-description {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* ─── Contact Section ────────────────────────────────────── */
+.contact {
+    padding: 4rem 0;
+    background: var(--background);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--border-light);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card img {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+}
+
+.contact-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--foreground);
+    margin: 0;
+}
+
+.contact-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.schedule {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.schedule h3 {
+    font-size: 1.2rem;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+}
+
+.schedule ul {
+    list-style: none;
+}
+
+.schedule li {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    padding: 0.5rem 0;
+}
+
+.contact-cta {
+    text-align: center;
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+.footer {
+    background: var(--foreground);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    animation: fadeUp 0.6s ease-out;
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 2rem 1rem 3rem;
+    }
+
+    .navbar-links {
+        gap: 0.5rem;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
