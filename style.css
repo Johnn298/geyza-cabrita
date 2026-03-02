@@ -17,13 +17,12 @@ html {
 }
 
 body {
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: #402020;
     background-color: #faf8f5;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-       font-family: 'Jost', system-ui, sans-serif;
-
 }
 
 /* ─── Colors ─────────────────────────────────────────────── */
@@ -39,7 +38,10 @@ body {
 
 /* ─── Typography ─────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
-       font-family: 'Cormorant Garamond', Georgia, serif;
+        font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
 a {
