@@ -777,3 +777,73 @@ body {
         font-size: 0.85rem;
     }
 }
+.site-footer {
+  background-color: var(--clr-text);
+  color: var(--clr-cream);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  padding-block: var(--space-2xl);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.footer-brand .logo-icon {
+  color: var(--clr-beige);
+}
+
+.footer-brand .logo-text {
+  color: var(--clr-cream);
+}
+
+.footer-brand .logo-text em {
+  color: rgba(253, 248, 244, 0.5);
+}
+
+.footer-tagline {
+  font-size: 0.8rem;
+  color: rgba(253, 248, 244, 0.5);
+  font-style: italic;
+  margin: 0;
+}
+
+.footer-nav,
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+}
+
+.footer-nav a,
+.footer-legal a {
+  font-size: 0.875rem;
+  color: rgba(253, 248, 244, 0.65);
+  transition: color var(--transition-fast);
+}
+
+.footer-nav a:hover,
+.footer-legal a:hover {
+  color: var(--clr-cream);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(253, 248, 244, 0.1);
+  padding-block: var(--space-md);
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  color: rgba(253, 248, 244, 0.4);
+  margin: 0;
+}
+
