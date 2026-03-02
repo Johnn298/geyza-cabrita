@@ -17,12 +17,13 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: #402020;
     background-color: #faf8f5;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+       font-family: 'Jost', system-ui, sans-serif;
+
 }
 
 /* ─── Colors ─────────────────────────────────────────────── */
