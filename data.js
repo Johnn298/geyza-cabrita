@@ -1,5 +1,3 @@
-// SERVICES SECTION - JAVASCRIPT ONLY
-
 // Services Data
 const services = {
     manicure: [
@@ -59,18 +57,15 @@ const categories = [
 
 let selectedCategory = 'manicure';
 
-// DOM Elements
-const categoryTabs = document.getElementById('categoryTabs');
-const servicesGrid = document.getElementById('servicesGrid');
-
 // Initialize
-function initServices() {
+document.addEventListener('DOMContentLoaded', function() {
     renderCategoryTabs();
     renderServices('manicure');
-}
+});
 
 // Render category tabs
 function renderCategoryTabs() {
+    const categoryTabs = document.getElementById('categoryTabs');
     categoryTabs.innerHTML = categories.map(cat => `
         <button class="category-btn ${cat.key === selectedCategory ? 'active' : ''}" 
                 data-category="${cat.key}">
@@ -85,9 +80,11 @@ function renderCategoryTabs() {
     });
 }
 
-// Render services
+// Render services grid
 function renderServices(category) {
+    const servicesGrid = document.getElementById('servicesGrid');
     const categoryServices = services[category] || [];
+    
     servicesGrid.innerHTML = categoryServices.map(service => `
         <div class="service-card">
             <h3>${service.name}</h3>
@@ -101,11 +98,4 @@ function selectCategory(category) {
     selectedCategory = category;
     renderCategoryTabs();
     renderServices(category);
-}
-
-// Start on page load
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initServices);
-} else {
-    initServices();
 }
