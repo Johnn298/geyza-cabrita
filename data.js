@@ -47,12 +47,12 @@ const services = {
 };
 
 const categories = [
-    { key: 'manicure', label: 'Manicure', icon: '✨' },
-    { key: 'pedicure', label: 'Pedicure', icon: '💅' },
-    { key: 'lashes', label: 'Pestanas', icon: '👁️' },
-    { key: 'brows', label: 'Sobrancelhas', icon: '🎨' },
-    { key: 'waxing', label: 'Depilação', icon: '🌸' },
-    { key: 'makeup', label: 'Maquilhagem', icon: '💄' },
+    { key: 'manicure', label: 'Manicure', icon: '' },
+    { key: 'pedicure', label: 'Pedicure', icon: '' },
+    { key: 'lashes', label: 'Pestanas', icon: '' },
+    { key: 'brows', label: 'Sobrancelhas', icon: '' },
+    { key: 'waxing', label: 'Depilação', icon: '' },
+    { key: 'makeup', label: 'Maquilhagem', icon: '' },
 ];
 
 let selectedCategory = 'manicure';
