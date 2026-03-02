@@ -847,3 +847,6 @@ body {
   margin: 0;
 }
 
+.nav-ctaa {
+  flex-shrink: 0;
+}
