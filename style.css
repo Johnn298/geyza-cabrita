@@ -139,21 +139,13 @@ a {
     margin-bottom: 0.5rem;
     opacity: 0.9;
 }
-.hero-subtitle {
-   font-size: clamp(1rem, 2vw, 1.2rem);
-  color: rgba(253, 248, 244, 0.85);
-  max-width: 480px;
-  font-weight: 300;
-  margin: 0;
-}
+
 
 .hero-title {
-    font-family: var(--font-serif);
-  font-size: clamp(2.8rem, 7vw, 5.5rem);
-  font-weight: 300;
-  color: var(--clr-white);
-  line-height: 1.1;
-  max-width: 700px;
+     font-size: clamp(2.2rem, 8vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--foreground);
+    margin-bottom: 1.5rem;
    
 }
 
